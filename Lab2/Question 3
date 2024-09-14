@@ -1,1 +1,8 @@
-
+START 
+INPUT a
+INPUT b
+INPUT c
+SET sum to 0
+SET sum to a-(-b)-(-c)
+PRINT "sum"
+END
