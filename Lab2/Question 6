@@ -1,1 +1,27 @@
-
+ 1. Ask the user to enter a number(1-12)
+ 2. IF number == 1 THEN
+ 3.   Display "January"
+ 4. ELSE IF number == 2 THEN
+ 5.   Display "February"
+ 6. ELSE IF number == 3 THEN
+ 7.   Display "March"
+ 8. ELSE IF number == 4 THEN
+ 9.   Display "April"
+10. ELSE IF number == 5 THEN
+11.   Display "May"
+12. ELSE IF number == 6 THEN
+13.   Display "June"
+14. ELSE IF number == 7 THEN
+15.   Display "July"
+16. ELSE IF number == 8 THEN
+17.   Display "August"
+18. ELSE IF number == 9 THEN
+19.   Display "September"
+20. ELSE IF number == 10 THEN
+21.   Display "October"
+22. ELSE IF number == 11 THEN
+23.   Display "November"
+24. ELSE IF number == 12 THEN
+25.   Display "December"
+26. ELSE
+27.   Display "Invalid month number"
