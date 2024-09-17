@@ -1,0 +1,10 @@
+1. Ask the user to enter a number 'n'
+2. Ask the user to enter another number 'd'
+3. Check divisibility ( n mod d )
+4. IF remainder is zero 
+5. Display 'd' is a divisor of 'n'
+6. Check if 'n' is even ( n mod 2 )
+7. IF remainder is zero 
+8. Display 'n' is even
+9. ELSE 
+10.Display 'n' is odd
