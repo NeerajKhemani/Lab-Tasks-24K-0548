@@ -1,4 +1,4 @@
- 1. Ask the user to enter a number(1-12)
+1. Ask the user to enter a number(1-12)
  2. IF number == 1 THEN
  3.   Display "January"
  4. ELSE IF number == 2 THEN
