@@ -1,1 +1,10 @@
+Wrong value is displayed in output because in the code the value is defined as integer.
+It can only store 4-bits of data and the value is larger than 4-bits.
+This problem can be solved by defining the value as an long integer.
+In the following way:
 
+#include <stdio.h>
+int main() {
+    long testInteger=3000000000; 
+    printf("Number is %ld",testInteger);
+}
