@@ -1,4 +1,4 @@
-#include <stdio.h>
+to#include <stdio.h>
 int main() {
 int a,b,c;
 printf("Enter 1st number:");
@@ -8,9 +8,7 @@ scanf("%d",&b);
 c=b;
 b=a;
 a=c;
-printf("After swapping the number are:\n
-        1st number:%d\n
-        2nd number:%d\n",a,b);
+printf("After swapping the number are:\n1st number:%d\n2nd number:%d\n",a,b);
 
 return 0;
 }
