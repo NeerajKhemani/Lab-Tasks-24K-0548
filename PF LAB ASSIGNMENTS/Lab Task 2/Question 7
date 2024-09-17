@@ -1,0 +1,21 @@
+ 1. Ask the user to enter num1
+ 2. Ask the user to enter num2
+ 3. Ask the user to enter operator(+,-,*,/,%)
+ 4. IF operator == '+'
+ 5.   Display "num1+num2"
+ 6. ELSE IF operator == '-'
+ 7.   Display "num1-num2"
+ 8. ELSE IF operator == '*'
+ 9.   Display "num1*num2"
+10. ELSE IF operator == '/'
+11.   IF num2 == 0
+12.      Display "Division not possible"
+13.   ELSE 
+14.      Display "num1/num2"
+15. ELSE IF operator == '%'
+16.   IF num2 == 0
+17.      Display "Division not possible"
+18.   ELSE
+19.      Display "num1%num2
+20. ELSE 
+21.   Display "INVALID OPERATION"
