@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+float a,b,c,d;
+printf("Enter monthly salary:");
+scanf("%f",&a);
+printf("Enter monthly tax rate:");
+scanf("%f",&b);
+c=a*(b/100);
+d=a-c;
+printf("Your tax is:%f\n",c);
+printf("Your salary after paying tax is:%f\n",d);
+
+return 0;
+}
