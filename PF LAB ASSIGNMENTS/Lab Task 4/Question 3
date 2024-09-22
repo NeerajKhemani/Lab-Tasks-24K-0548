@@ -20,7 +20,7 @@ switch(o){
 	break;
 	case '/':
 		if(b==0){
-			printf("Mathematical error");
+			printf("Error: Division by 0");
 		}
 	  else
 	    c=a/b;
