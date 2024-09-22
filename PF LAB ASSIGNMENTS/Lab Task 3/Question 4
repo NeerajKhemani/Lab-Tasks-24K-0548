@@ -1,0 +1,24 @@
+ #include <stdio.h>
+int main() {
+float d=1207,f1=118,f2=123,f_a;
+float f_c,fp_ab,fp_ba,t_fp;
+printf("Fuel Average (Litre/Kilometre):");
+scanf("%f",&f_a);
+if (e>0){
+    f_c=1207/f_a;
+    fp_ab=f1*f_c;
+    fp_ba=f2*f_c;
+    t_fp=fp_ab+fp_ba;
+    printf("The Total fuel consumed is:%f\n",f_con*2);
+    printf("The Fuel cost from A to B is:%.2f \n ",fp_ab);
+    printf("The Fuel cost from B to A is:%.2f\n",fp_ba);
+    printf("The Total cost is:%.2f\n",t_fp);
+
+}
+else {
+    printf("Invalid input");
+}
+
+
+    return 0;
+}
