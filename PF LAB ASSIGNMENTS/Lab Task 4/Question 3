@@ -29,7 +29,7 @@ switch(o){
         default:
     	printf("Invalid operator");	
    }
-	printf("Result=%.2f,c");
+	printf("Result=%.2f",c);
 
     return 0;
 }
