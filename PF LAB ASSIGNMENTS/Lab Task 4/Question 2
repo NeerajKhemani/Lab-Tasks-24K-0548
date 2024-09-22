@@ -1,0 +1,13 @@
+#include <stdio.h>
+int main() {
+int a;
+printf("Enter any number:");
+scanf("%d",&a);
+if (a>0 && a%2==0 && a%10==0){
+    printf("This number satisfys the condition");
+   }
+else{
+    printf("This number doesn't satisfys the condition");
+   }
+  return 0;
+}
