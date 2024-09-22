@@ -1,0 +1,17 @@
+#include <stdio.h>
+int main() {
+float p,r,t,s;
+printf("Enter principle value between Rs 1 to Rs 1,000,000\n");
+printf("Enter principle value:");
+scanf("%f",&p);
+printf("Enter rate between 5% to 10%\n");
+printf("Enter rate of interest:");
+scanf("%f",&r);
+printf("Enter Time period between 1 year to 10years\n");
+printf("Enter time period:");
+scanf("%f",&t);
+s= (p*r*t)/100;
+printf("The simple interest is :%.2f",s);
+
+    return 0;
+}
