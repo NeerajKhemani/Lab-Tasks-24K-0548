@@ -8,6 +8,7 @@ printf("Enter second number:");
 scanf("%f",&b);
 printf("Enter operator:");
 scanf("%c",&o);
+c=0;
 switch(o){
 	case '+':
 		c=a+b;
@@ -25,10 +26,10 @@ switch(o){
 	  else
 	    c=a/b;
 	break;
-  default:
-    	printf("Invalid operator")	
+        default:
+    	printf("Invalid operator");	
    }
-	printf("Result=%.2f,c")
+	printf("Result=%.2f,c");
 
     return 0;
 }
