@@ -12,10 +12,10 @@ int main(){
  else if (u_c>=200 && u_c<300){
     b=u_c*20.10;
 }
-else if (units>=300 && units<500){
+else if (u_c>=300 && u_c<500){
     b=u_c*27.10;
 }
-else if (units>=500){
+else if (u_c>=500){
     b=u_c*35.90;
 }
 else{
@@ -28,11 +28,11 @@ if (b>18000){
 else{
    n_a=b;
 }
-printf("Customer ID:%d",id);
-printf("Units comsumed:%.2f",u_c);
-printf("Amount charges:%.2f",b);
-printf("Surcharge Amount:%.2f",s_a);
-printf("Net Amount:%.2f",n_a);
+printf("Customer ID:%d\n",id);
+printf("Units comsumed:%.2f\n",u_c);
+printf("Amount charges:%.2f\n",b);
+printf("Surcharge Amount:%.2f\n",s_a);
+printf("Net Amount:%.2f\n",n_a);
 
  return 0;
 }
