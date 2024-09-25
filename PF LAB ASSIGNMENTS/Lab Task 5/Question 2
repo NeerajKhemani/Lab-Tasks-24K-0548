@@ -1,15 +1,9 @@
 #include <stdio.h>
 int main(){
 int w,v;
-printf("Should we sleep in");
-printf("Note: Enter 1 for Monday 
-                    2 for Tuesday 
-                    3 for Wednesday 
-                    4 for Thursday 
-                    5 for Friday 
-                    6 for Saturday 
-                    7 for Sunday");
-printf("Enter the Corresponding number for the day of Week:");
+printf("Should we sleep in\n");
+printf("Note: Enter 1 for Monday\n\t\t\t2 for Tuesday\n\t\t\t3 for Wednesday\n\t\t\t4 for Thursday\n\t\t\t5 for Friday\n\t\t\t6 for Saturday\n\t\t\t7 for Sunday\n");
+printf("Enter number for corresponding day:");
 scanf("%d",&w);
 printf("Enter 1 if on Vacation otherwise enter 0:");
 scanf("%d",&v);
