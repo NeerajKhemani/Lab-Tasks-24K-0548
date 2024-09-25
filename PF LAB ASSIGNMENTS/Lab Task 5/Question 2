@@ -1,42 +1,45 @@
 #include <stdio.h>
-int main () {
-    int w,v;
-    printf("Note: Enter 1 for Monday 
-                        2 for Tuesday 
-                        3 for Wednesday 
-                        4 for Thursday 
-                        5 for Friday 
-                        6 for Saturday 
-                        7 for Sunday");
-    printf("Enter the Corresponding day of Week:");
-    scanf("%i",&wd);
-    printf("Enter 1 if on Vacation else enter 0:");
-    scanf("%i",&sov);
-    if ((wd>7 || wd<1)||(sov>1 || sov<0)){
-        printf("Invalid Input");
-    }
-switch(wd)
-{
-case 1: //1 is for sunday
-printf("True");
+int main(){
+int w,v;
+printf("Should we sleep in");
+printf("Note: Enter 1 for Monday 
+                    2 for Tuesday 
+                    3 for Wednesday 
+                    4 for Thursday 
+                    5 for Friday 
+                    6 for Saturday 
+                    7 for Sunday");
+printf("Enter the Corresponding number for the day of Week:");
+scanf("%d",&w);
+printf("Enter 1 if on Vacation otherwise enter 0:");
+scanf("%d",&v);
+if (v>1 || v<0){
+       printf("Invalid Input");
+}
+switch(w){
+case 1:
+(v==1)?printf("True"):printf("False");
 break;
 case 2:
-(sov==1)?printf("True"):printf("Fasle");
+(v==1)?printf("True"):printf("False");
 break;
 case 3:
-(sov==1)?printf("True"):printf("Fasle");
+(v==1)?printf("True"):printf("False");
 break;
 case 4:
-(sov==1)?printf("True"):printf("Fasle");
+(v==1)?printf("True"):printf("False");
 break;
 case 5:
-(sov==1)?printf("True"):printf("Fasle");
+(v==1)?printf("True"):printf("False");
 break;
 case 6:
-(sov==1)?printf("True"):printf("Fasle");
+printf("True");
 break;
 case 7:
-(sov==1)?printf("True"):printf("Fasle");
+printf("True");
+break;
+default:
+printf("Invalid Input");
 }
-return 0;
+  return 0;
 }
