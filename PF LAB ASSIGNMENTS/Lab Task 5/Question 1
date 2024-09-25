@@ -1,1 +1,17 @@
 
+#include <stdio.h>
+int main(){
+float n_c,f_g,t_c;
+printf("Enter the number of Calories:");
+scanf("%f",&n_c);
+printf("Enter the number of fat grams:");
+scanf("%f",&f_g);
+if((n_c==0 || f_g==0) || n_c<f_g ){
+    printf("Either the calories or fat grams were incorrectly entered");
+}
+else{
+     t_c = (f_g*9)/n_c;
+     printf("Total number of Calories:%.2f",t_c);
+}
+   return 0; 
+}
