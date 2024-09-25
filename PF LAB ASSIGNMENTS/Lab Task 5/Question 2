@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main () {
+    int w,v;
+    printf("Note: Enter 1 for Monday 
+                        2 for Tuesday 
+                        3 for Wednesday 
+                        4 for Thursday 
+                        5 for Friday 
+                        6 for Saturday 
+                        7 for Sunday");
+    printf("Enter the Corresponding day of Week:");
+    scanf("%i",&wd);
+    printf("Enter 1 if on Vacation else enter 0:");
+    scanf("%i",&sov);
+    if ((wd>7 || wd<1)||(sov>1 || sov<0)){
+        printf("Invalid Input");
+    }
+switch(wd)
+{
+case 1: //1 is for sunday
+printf("True");
+break;
+case 2:
+(sov==1)?printf("True"):printf("Fasle");
+break;
+case 3:
+(sov==1)?printf("True"):printf("Fasle");
+break;
+case 4:
+(sov==1)?printf("True"):printf("Fasle");
+break;
+case 5:
+(sov==1)?printf("True"):printf("Fasle");
+break;
+case 6:
+(sov==1)?printf("True"):printf("Fasle");
+break;
+case 7:
+(sov==1)?printf("True"):printf("Fasle");
+}
+return 0;
+}
