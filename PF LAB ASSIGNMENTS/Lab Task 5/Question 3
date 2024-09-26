@@ -1,0 +1,18 @@
+#include <stdio.h>
+int main(){
+int t;
+char c_t,c_s;
+printf("Enter B for Black coffee and W for White coffee");
+printf("Enter coffee type:");
+scanf("%c",&c_t);
+printf("Enter D for double and M for manual");
+printf("Enter cup size:");
+scanf("%c",&c_s);
+switch(c_t){
+    case'B':
+       printf("Putting water in cup(Est. time:15 mins)\n");
+       printf("Adding sugar to the cup(Est. time:15 mins\n");
+       printf("Mixing well(Est. time:20 mins)\n");
+       printf("Adding coffee to the cup(Est. time:2 mins\n");
+       printf("Adding milk to the cup(Est. time:\n");
+       printf("Mix well
