@@ -1,7 +1,7 @@
-#include<stdio.h>
+#include <stdio.h>
 int main (){
 float gpa;
-printf("Enter GPA");
+printf("Enter Grade Point Average:");
 scanf("%f",&gpa);
 (gpa>=0.00 && gpa<=.99)? printf("Failed semester-registration suspended"):
 (gpa>=1.00 && gpa<=1.99)? printf("On probation for next month"):
