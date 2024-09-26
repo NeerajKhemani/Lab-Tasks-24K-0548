@@ -1,12 +1,58 @@
 #include <stdio.h>
 int main(){
-   int r_n,y_r,s;
-   printf("Enter roll number as 6 digit integer(Example:240678\n");
+   int r_n,y_r,s,s_n;
+   char sec;
+   printf("Enter roll number as 6 digit integer(Example:240678\n)");
    printf("Enter roll number:");
    scanf("%d",&r_n);
    if(r_n>=250000 || r_n<210000){
        printf("Invalid Input");
    }
    y_r = r_n%10000;
-   (y_r==21)?(s=7):(y_r==22)?(s=5):(y_r==23)?(s=3):(y_r==24)?(s=1):(Invalid Input);
+   s_n = (r_n/1000)%10;
+   (y_r==21)?s=7:(y_r==22)?s=5:(y_r==23)?s=3:(y_r==24)?s=1:printf("Invalid Input");
+   switch(s_n){
+   	    case 1:
+   	    	sec='A';
+   	    	break;
+   	    case 2:
+		    sec='B';
+		   	break;
+		case 3:
+		   	sec='C';
+		   	break;
+		case 4:
+		   	sec='D';
+		   	break;
+		case 5:
+   	    	sec='E';
+   	    	break;
+   	    case 6:
+		    sec='F';
+		   	break;
+		case 7:
+		   	sec='G';
+		   	break;
+		case 8:
+		   	sec='H';
+		   	break;
+		case 9:
+   	    	sec='I';
+   	    	break;
+   	    case 10:
+		    sec='J';
+		   	break;
+		case 11:
+		   	sec='K';
+		   	break;
+		case 12:
+		   	sec='L';
+		   	break;
+		default:
+			printf("Invalid Input");   	     	
+   }
+       printf("Year Of Registration:20%d\n",y_r); 
+       printf("Current Semester:%d\n",s);
+       printf("Section: %c\n",sec);
+     return 0;
 }
