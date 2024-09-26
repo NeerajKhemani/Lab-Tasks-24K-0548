@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main(){
+float pH;
+printf("Enter pH value:");
+scanf("%f",&pH);
+if (pH<1 && pH>14){
+      printf("Invalid Input");
+}
+if (pH==7){
+      printf("Neutral");
+}
+else if (pH<7 && pH>2){
+      printf("Acidic");
+}
+else if("pH<2"){
+       printf("Very Acidic");
+}
+else if("pH>7 && pH<12){
+       printf("Alkaline");
+}
+else{
+       printf("Very Alkaline");
+}
+   return 0;
+}
