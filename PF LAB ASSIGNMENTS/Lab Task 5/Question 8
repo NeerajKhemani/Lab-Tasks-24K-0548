@@ -1,0 +1,12 @@
+#include <stdio.h>
+int main(){
+   int r_n,y_r,s;
+   printf("Enter roll number as 6 digit integer(Example:240678\n");
+   printf("Enter roll number:");
+   scanf("%d",&r_n);
+   if(r_n>=250000 || r_n<210000){
+       printf("Invalid Input");
+   }
+   y_r = r_n%10000;
+   (y_r==21)?(s=7):(y_r==22)?(s=5):(y_r==23)?(s=3):(y_r==24)?(s=1):(Invalid Input);
+}
