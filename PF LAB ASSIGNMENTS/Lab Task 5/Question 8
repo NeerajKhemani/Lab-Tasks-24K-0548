@@ -36,15 +36,6 @@ int main(){
 	    case 9:
    	    	sec='I';
    	    	break;
-   	    case 10:
-		 sec='J';
-		 break;
-	    case 11:
-		  sec='K';
-		  break;
-	    case 12:
-		  sec='L';
-	   	 break;
 	    default:
 		 printf("Invalid Input");   	     	
    }
