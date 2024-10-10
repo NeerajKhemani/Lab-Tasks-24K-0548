@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 int main() {
 int number,Prime = 1,a = 0,b = 1,next;
