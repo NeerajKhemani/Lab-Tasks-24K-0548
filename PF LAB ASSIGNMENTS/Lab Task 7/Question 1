@@ -1,1 +1,14 @@
-
+#include <stdio.h>
+int main (){
+    int arr[6], s_arr[6],i;
+    printf("Enter 6 elements:\n");
+    for (i=0;i<6;i++){
+        scanf("%d",&arr[i]);
+    }
+    s_arr[0]=arr[5];
+    printf("Shifted array : ");
+    for (i=0;i<6;i++){
+       s_arr[i+1]=arr[i];
+        printf("%d,",s_arr[i]);
+    }
+}
