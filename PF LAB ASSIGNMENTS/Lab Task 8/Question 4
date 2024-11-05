@@ -1,1 +1,52 @@
+#include <stdio.h>
+int main() {
+    int A[3][3], B[3][3], result[3][3], subtraction[3][3];
+    int i, j, k;
 
+    printf("Enter elements for Matrix A (3x3):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    printf("Enter elements for Matrix B (3x3):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            result[i][j] = 0;
+            for (k = 0; k < 3; k++) {
+                result[i][j] += A[i][k] * B[k][j];
+            }
+        }
+    }
+
+    printf("Resultant Matrix (A * B):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            subtraction[i][j] = A[i][j] - result[i][j];
+        }
+    }
+
+    printf("Matrix A - Resultant Matrix (A - (A * B)):\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("%d ", subtraction[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
