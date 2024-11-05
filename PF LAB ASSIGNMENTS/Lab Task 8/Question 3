@@ -1,1 +1,40 @@
+#include <stdio.h>
+int main() {
+    int matrix[3][3];
+    int i, j;
+    
+    printf("Enter the elements of a 3x3 matrix:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    
+    printf("Saddle Point(s):\n");
+    
+    for (i = 0; i < 3; i++) {
+        int min_row = matrix[i][0];
+        int col_index = 0;
 
+        for (j = 1; j < 3; j++) {
+            if (matrix[i][j] < min_row) {
+                min_row = matrix[i][j];
+                col_index = j;
+            }
+        }
+
+        int is_saddle_point = 1;
+        for (j = 0; j < 3; j++) {
+            if (matrix[j][col_index] > min_row) {
+                is_saddle_point = 0;
+                break;
+            }
+        }
+
+        if (is_saddle_point) {
+            printf("Saddle Point at position (%d, %d): %d\n", i + 1, col_index + 1, min_row);
+        }
+    }
+
+    return 0;
+}
