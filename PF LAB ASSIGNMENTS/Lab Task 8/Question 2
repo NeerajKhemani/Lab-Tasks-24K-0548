@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main() {
-    int n, start;
+    int n, start,i;
 
     printf("Enter the number of sub-arrays (n): ");
     scanf("%d", &n);
@@ -11,7 +11,7 @@ int main() {
     int current_even = (start % 2 == 0) ? start : start - 1;
     int current_odd = (start % 2 != 0) ? start : start - 1;
 
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         arr[0][i][0] = current_even;
         arr[0][i][1] = current_even - 2;
         current_even -= 4;
@@ -22,7 +22,7 @@ int main() {
     }
 
     printf("Even and Odd arrays in decreasing order:\n");
-    for (int i = 0; i < n; i++) {
+    for (i = 0; i < n; i++) {
         printf("Even Sub-array %d: [%d, %d]\n", i + 1, arr[0][i][0], arr[0][i][1]);
         printf("Odd Sub-array %d: [%d, %d]\n", i + 1, arr[1][i][0], arr[1][i][1]);
     }
