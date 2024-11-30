@@ -1,1 +1,14 @@
+#include <stdio.h>
 
+void printArrayReverse(int arr[], int size) {
+    if (size == 0) return;
+    printf("%d\n", arr[size - 1]);
+    printArrayReverse(arr, size - 1);
+}
+
+int main() {
+    int array[] = {1, 2, 3, 4, 5};
+    int size = sizeof(array) / sizeof(array[0]);
+    printArrayReverse(array, size);
+    return 0;
+}
