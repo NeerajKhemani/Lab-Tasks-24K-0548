@@ -1,1 +1,41 @@
+#include <stdio.h>
+#include <math.h>
 
+typedef struct {
+    double x;
+    double y;
+} Point;
+
+double calculateDistance(Point p1, Point p2) {
+    return sqrt((p2.x - p1.x) * (p2.x - p1.x) + (p2.y - p1.y) * (p2.y - p1.y));
+}
+
+int isPointInRectangle(Point p, Point topLeft, Point bottomRight) {
+    return (p.x >= topLeft.x && p.x <= bottomRight.x && p.y <= topLeft.y && p.y >= bottomRight.y);
+}
+
+int main() {
+    Point p1, p2, topLeft, bottomRight;
+
+    printf("Enter coordinates of point 1 (x y): ");
+    scanf("%lf %lf", &p1.x, &p1.y);
+
+    printf("Enter coordinates of point 2 (x y): ");
+    scanf("%lf %lf", &p2.x, &p2.y);
+
+    printf("Enter coordinates of top-left corner of rectangle (x y): ");
+    scanf("%lf %lf", &topLeft.x, &topLeft.y);
+
+    printf("Enter coordinates of bottom-right corner of rectangle (x y): ");
+    scanf("%lf %lf", &bottomRight.x, &bottomRight.y);
+
+    printf("Distance between points: %.2f\n", calculateDistance(p1, p2));
+
+    if (isPointInRectangle(p1, topLeft, bottomRight)) {
+        printf("Point p1 lies within the rectangle.\n");
+    } else {
+        printf("Point p1 does not lie within the rectangle.\n");
+    }
+
+    return 0;
+}
