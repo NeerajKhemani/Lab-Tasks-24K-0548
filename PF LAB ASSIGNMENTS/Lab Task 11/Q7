@@ -1,1 +1,36 @@
+#include <stdio.h>
 
+struct Company {
+    char name[100];
+    int year_established;
+    char departments[5][50];
+};
+
+int main() {
+    struct Company company;
+
+    printf("Enter company name: ");
+    fgets(company.name, sizeof(company.name), stdin);
+
+    printf("Enter year established: ");
+    scanf("%d", &company.year_established);
+    getchar();
+
+    printf("Enter names of up to 5 departments:\n");
+    for (int i = 0; i < 5; i++) {
+        printf("Department %d: ", i + 1);
+        fgets(company.departments[i], sizeof(company.departments[i]), stdin);
+    }
+
+    printf("\nCompany Details:\n");
+    printf("Name: %s", company.name);
+    printf("Year Established: %d\n", company.year_established);
+    printf("Departments:\n");
+    for (int i = 0; i < 5; i++) {
+        if (company.departments[i][0] != '\0') {
+            printf("%d. %s", i + 1, company.departments[i]);
+        }
+    }
+
+    return 0;
+}
