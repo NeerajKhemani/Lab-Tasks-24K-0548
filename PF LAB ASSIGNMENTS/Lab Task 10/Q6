@@ -1,1 +1,120 @@
+#include <stdio.h>
+#include <string.h>
 
+#define MAX_PACKAGES 100
+
+typedef struct {
+    char packageName[100];
+    char destination[100];
+    int duration;
+    double cost;
+    int seatsAvailable;
+} TravelPackage;
+
+void displayPackages(TravelPackage packages[], int count) {
+    for (int i = 0; i < count; i++) {
+        printf("Package %d:\n", i + 1);
+        printf("  Name: %s\n", packages[i].packageName);
+        printf("  Destination: %s\n", packages[i].destination);
+        printf("  Duration: %d days\n", packages[i].duration);
+        printf("  Cost: $%.2f\n", packages[i].cost);
+        printf("  Seats Available: %d\n", packages[i].seatsAvailable);
+        printf("----------------------\n");
+    }
+}
+
+void bookPackage(TravelPackage packages[], int count) {
+    char name[100];
+    int found = 0;
+
+    printf("\nEnter the package name to book: ");
+    fgets(name, sizeof(name), stdin);
+    name[strcspn(name, "\n")] = 0;
+
+    for (int i = 0; i < count; i++) {
+        if (strcmp(packages[i].packageName, name) == 0) {
+            found = 1;
+            if (packages[i].seatsAvailable > 0) {
+                packages[i].seatsAvailable--;
+                printf("Booking successful! Seats remaining: %d\n", packages[i].seatsAvailable);
+            } else {
+                printf("No seats available for this package.\n");
+            }
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("Package not found.\n");
+    }
+}
+
+int main() {
+    TravelPackage packages[MAX_PACKAGES];
+    int count = 0, choice;
+
+    do {
+        printf("\nTravel Package Menu:\n");
+        printf("1. Add a Package\n");
+        printf("2. Display Packages\n");
+        printf("3. Book a Package\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+        getchar();
+
+        switch (choice) {
+            case 1:
+                if (count < MAX_PACKAGES) {
+                    printf("Enter package name: ");
+                    fgets(packages[count].packageName, sizeof(packages[count].packageName), stdin);
+                    packages[count].packageName[strcspn(packages[count].packageName, "\n")] = 0;
+
+                    printf("Enter destination: ");
+                    fgets(packages[count].destination, sizeof(packages[count].destination), stdin);
+                    packages[count].destination[strcspn(packages[count].destination, "\n")] = 0;
+
+                    printf("Enter duration (in days): ");
+                    scanf("%d", &packages[count].duration);
+
+                    printf("Enter cost: ");
+                    scanf("%lf", &packages[count].cost);
+
+                    printf("Enter number of seats available: ");
+                    scanf("%d", &packages[count].seatsAvailable);
+                    getchar();
+
+                    count++;
+                    printf("Package added successfully.\n");
+                } else {
+                    printf("Cannot add more packages. Maximum limit reached.\n");
+                }
+                break;
+
+            case 2:
+                if (count > 0) {
+                    displayPackages(packages, count);
+                } else {
+                    printf("No packages available.\n");
+                }
+                break;
+
+            case 3:
+                if (count > 0) {
+                    bookPackage(packages, count);
+                } else {
+                    printf("No packages available to book.\n");
+                }
+                break;
+
+            case 4:
+                printf("Exiting program.\n");
+                break;
+
+            default:
+                printf("Invalid choice. Try again.\n");
+        }
+    } while (choice != 4);
+
+    return 0;
+}
