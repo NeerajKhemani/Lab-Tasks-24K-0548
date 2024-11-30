@@ -91,7 +91,7 @@ int main() {
 
                     printf("Enter price: ");
                     scanf("%lf", &books[count].price);
-                    getchar(); // Clear the newline character
+                    getchar(); 
 
                     count++;
                     printf("Book added successfully.\n");
