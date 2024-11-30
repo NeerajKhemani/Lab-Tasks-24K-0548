@@ -1,1 +1,109 @@
+#include <stdio.h>
 
+typedef struct {
+    int day;
+    int month;
+    int year;
+} Date;
+
+int isLeapYear(int year) {
+    if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+        return 1;
+    }
+    return 0;
+}
+
+int daysInMonth(int month, int year) {
+    switch (month) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            return 31;
+        case 4: case 6: case 9: case 11:
+            return 30;
+        case 2:
+            return isLeapYear(year) ? 29 : 28;
+        default:
+            return 0;
+    }
+}
+
+int isValidDate(Date date) {
+    if (date.year < 1) return 0;
+    if (date.month < 1 || date.month > 12) return 0;
+    if (date.day < 1 || date.day > daysInMonth(date.month, date.year)) return 0;
+    return 1;
+}
+
+int calculateDaysBetween(Date start, Date end) {
+    int days = 0;
+    if (start.year == end.year && start.month == end.month && start.day == end.day) {
+        return 0;
+    }
+
+    Date temp = start;
+    while (temp.year < end.year || (temp.year == end.year && temp.month < end.month) || (temp.year == end.year && temp.month == end.month && temp.day < end.day)) {
+        temp.day++;
+        if (temp.day > daysInMonth(temp.month, temp.year)) {
+            temp.day = 1;
+            temp.month++;
+            if (temp.month > 12) {
+                temp.month = 1;
+                temp.year++;
+            }
+        }
+        days++;
+    }
+
+    return days;
+}
+
+int dayOfWeek(Date date) {
+    int d = date.day;
+    int m = date.month;
+    int y = date.year;
+
+    if (m < 3) {
+        m += 12;
+        y--;
+    }
+    int k = y % 100;
+    int j = y / 100;
+    
+    int dayOfWeek = (d + (13 * (m + 1)) / 5 + k + k / 4 + j / 4 + 5 * j) % 7;
+    return dayOfWeek;
+}
+
+const char* getDayName(int day) {
+    switch(day) {
+        case 0: return "Saturday";
+        case 1: return "Sunday";
+        case 2: return "Monday";
+        case 3: return "Tuesday";
+        case 4: return "Wednesday";
+        case 5: return "Thursday";
+        case 6: return "Friday";
+        default: return "Invalid day";
+    }
+}
+
+int main() {
+    Date date1, date2;
+
+    printf("Enter first date (day month year): ");
+    scanf("%d %d %d", &date1.day, &date1.month, &date1.year);
+
+    printf("Enter second date (day month year): ");
+    scanf("%d %d %d", &date2.day, &date2.month, &date2.year);
+
+    if (!isValidDate(date1) || !isValidDate(date2)) {
+        printf("One or both dates are invalid.\n");
+        return 0;
+    }
+
+    int daysBetween = calculateDaysBetween(date1, date2);
+    printf("Number of days between the two dates: %d\n", daysBetween);
+
+    printf("Day of the week for first date: %s\n", getDayName(dayOfWeek(date1)));
+    printf("Day of the week for second date: %s\n", getDayName(dayOfWeek(date2)));
+
+    return 0;
+}
