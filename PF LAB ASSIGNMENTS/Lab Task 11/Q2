@@ -1,1 +1,89 @@
+Approach:
 
+1. Read the File: Open and read the contents of the file.
+
+
+2. Extract Words: Split the text into words by separating by spaces and punctuation marks.
+
+
+3. Count Occurrences: Use a data structure like a hash table (or a simple array if only small words are involved) to store the frequency of each word.
+
+
+4. Display Results: After reading the file and counting the words, display each word with its count.
+
+Code:
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX_WORDS 1000
+#define MAX_LENGTH 100
+
+struct WordCount {
+    char word[MAX_LENGTH];
+    int count;
+};
+
+int isWordChar(char ch) {
+    return isalpha(ch) || ch == '\'';
+}
+
+void addWord(struct WordCount words[], int *numWords, char *word) {
+    for (int i = 0; i < *numWords; i++) {
+        if (strcmp(words[i].word, word) == 0) {
+            words[i].count++;
+            return;
+        }
+    }
+    strcpy(words[*numWords].word, word);
+    words[*numWords].count = 1;
+    (*numWords)++;
+}
+
+void processFile(const char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("Could not open file %s\n", filename);
+        return;
+    }
+
+    struct WordCount words[MAX_WORDS];
+    int numWords = 0;
+    char word[MAX_LENGTH];
+    int wordIndex = 0;
+    
+    while (1) {
+        char ch = fgetc(file);
+        
+        if (ch == EOF) {
+            break;
+        }
+        
+        if (isWordChar(ch)) {
+            word[wordIndex++] = tolower(ch);
+        } else {
+            if (wordIndex > 0) {
+                word[wordIndex] = '\0';
+                addWord(words, &numWords, word);
+                wordIndex = 0;
+            }
+        }
+    }
+
+    if (wordIndex > 0) {
+        word[wordIndex] = '\0';
+        addWord(words, &numWords, word);
+    }
+
+    fclose(file);
+
+    for (int i = 0; i < numWords; i++) {
+        printf("%s: %d\n", words[i].word, words[i].count);
+    }
+}
+
+int main() {
+    const char *filename = "sample.txt";
+    processFile(filename);
+    return 0;
+}
